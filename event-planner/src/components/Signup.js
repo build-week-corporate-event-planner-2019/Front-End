@@ -6,8 +6,10 @@ class Signup extends React.Component {
   // when you have handled the token, navigate to the BubblePage route
   state = {
     credentials: {
+      name: "",
       email: "",
-      username: "",
+      company: "",
+      role: "",
       password: "",
       confirmpassword: ""
     }
@@ -48,14 +50,20 @@ class Signup extends React.Component {
         <form onSubmit={this.signup}>
           <input
             type="text"
-            name="email"
-            value={this.state.credentials.username}
+            name="name"
+            value={this.state.credentials.name}
             onChange={this.handleChange}
           />
           <input
             type="text"
-            name="username"
-            value={this.state.credentials.username}
+            name="email"
+            value={this.state.credentials.email}
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="company"
+            value={this.state.credentials.company}
             onChange={this.handleChange}
           />
           <input
@@ -67,7 +75,7 @@ class Signup extends React.Component {
           <input
             type="password"
             name="confirmpassword"
-            value={this.state.credentials.password}
+            value={this.state.credentials.confirmpassword}
             onChange={this.handleChange}
           />
           <button>Sign Up!</button>
