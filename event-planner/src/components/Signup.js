@@ -34,10 +34,7 @@ class Signup extends React.Component {
       // make API call
       //   axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
       axiosWithAuth()
-        .post(
-          `https://corporate-event-planner-be.herokuapp.com/api/users/signup`,
-          this.state.credentials
-        )
+        .post(`/users/signup`, this.state.credentials)
         .then(res => {
           localStorage.setItem("token", res.data.payload);
           // redirect to the apps main page?
