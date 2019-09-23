@@ -24,25 +24,28 @@ class Signup extends React.Component {
     });
   };
 
-  //   signup = e => {
-  //       e.preventDefault();
-  //       const { password, confirmPassword } = this.state;
-  //     // perform all neccassary validations
-  //     if (password !== confirmPassword) {
-  //         alert("Passwords don't match");
-  //     } else {
-  //         // make API call
-  //     //   axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
-  //       axiosWithAuth()
-  //           .post('/api/register', this.state.credentials)
-  //           .then(res => {
-  //               localStorage.setItem('token', res.data.payload);
-  //               // redirect to the apps main page?
-  //               this.props.history.push('/protected');
-  //           })
-  //           .catch(err => console.log(err));
-  //   };
-  // }
+  signup = e => {
+    e.preventDefault();
+    const { password, confirmPassword } = this.state;
+    // perform all neccassary validations
+    if (password !== confirmPassword) {
+      alert("Passwords don't match");
+    } else {
+      // make API call
+      //   axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
+      axiosWithAuth()
+        .post(
+          `https://corporate-event-planner-be.herokuapp.com/api/users/signup`,
+          this.state.credentials
+        )
+        .then(res => {
+          localStorage.setItem("token", res.data.payload);
+          // redirect to the apps main page?
+          this.props.history.push("/protected");
+        })
+        .catch(err => console.log(err));
+    }
+  };
 
   render() {
     return (
