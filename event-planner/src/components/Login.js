@@ -21,18 +21,18 @@ class Login extends React.Component {
         });
     };
 
-    login = e => {
-        e.preventDefault();
-        // axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
-        axiosWithAuth()
-            .post('/login', this.state.credentials)
-            .then(res => {
-                localStorage.setItem('token', res.data.payload);
-                // redirect to the apps main page?
-                this.props.history.push('/protected');
-            })
-            .catch(err => console.log(err));
-    };
+    // login = e => {
+    //     e.preventDefault();
+    //     // axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
+    //     axiosWithAuth()
+    //         .post('/login', this.state.credentials)
+    //         .then(res => {
+    //             localStorage.setItem('token', res.data.payload);
+    //             // redirect to the apps main page?
+    //             this.props.history.push('/protected');
+    //         })
+    //         .catch(err => console.log(err));
+    // };
 
     render() {
         return (
