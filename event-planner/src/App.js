@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
+import Home from './components/Home';
 
-import { Route, Switch } from "react-router-dom";
-import Login from "./components/Login";
+//import { Route, Switch } from "react-router-dom";
 // import PrivateRoute from './components/PrivateRoute';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <PrivateRoute exact path="/protected" component={BubblePage} />
         <Route path="/login" component={Login} />
       </Switch> */}
-      <Login />
+      <Home />
     </div>
   );
 }
