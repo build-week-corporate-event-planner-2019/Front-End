@@ -24,10 +24,7 @@ class Login extends React.Component {
     e.preventDefault();
     // axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
     axiosWithAuth()
-      .post(
-        `https://corporate-event-planner-be.herokuapp.com/api/users/login`,
-        this.state.credentials
-      )
+      .post(`/users/login`, this.state.credentials)
       .then(res => {
         localStorage.setItem("token", res.data.payload);
         // redirect to the apps main page?
