@@ -1,6 +1,6 @@
 [build]
-  base = "empathy-builder/"
-  publish = "empathy-builder/build/"
+  base = "event-planner/"
+  publish = "event-planner/build/"
 
 
 [[redirects]]
