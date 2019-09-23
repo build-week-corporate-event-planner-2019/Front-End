@@ -5,12 +5,15 @@ import Login from "./Login";
 
 const Home = () => {
     return (
-        <>
-            <button>
-                <Link to="">Sign Up</Link>
-            </button>
-            <Login />
-        </>
+        <div className="home-wrapper">
+            <h1>Event Planner App</h1>
+            <div className="login-container">
+                <Login />
+                <button className="sign-up">
+                    <Link to="">Sign Up</Link>
+                </button>
+            </div>
+        </div>
     )
 }
 
