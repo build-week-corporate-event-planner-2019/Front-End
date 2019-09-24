@@ -29,7 +29,7 @@ class Signup extends React.Component {
     const { password, confirmPassword } = this.state;
     // perform all neccassary validations
     if (password !== confirmPassword) {
-      alert("Passwords don't match");
+      alert("Passwords do not match");
     } else {
       // make API call
       //   axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
@@ -78,7 +78,12 @@ class Signup extends React.Component {
             value={this.state.credentials.confirmpassword}
             onChange={this.handleChange}
           />
-          <button>Sign Up!</button>
+          <Link to={`/protected`}>
+            <button>Sign Up!</button>
+          </Link>
+        {/* // <Link to={`/events/${this.state.user.id}`}>
+        //   <button>Update</button>
+        // </Link> */}
         </form>
       </div>
     );
