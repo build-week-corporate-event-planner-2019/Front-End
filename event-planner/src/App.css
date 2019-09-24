@@ -20,3 +20,111 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+.App {
+  text-align: center;
+}
+
+
+.navbar{
+  text-align: center;
+  width: 100%;
+  background: slateblue;
+  font-size: 25px;
+  
+  
+}
+
+.nav-brand{
+  color: slateblue;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  background-color: slateblue;
+  color: black;
+
+  font-size: 20px;
+  width: 100%;
+  margin-top: 5%;
+}
+
+
+.copyright{
+  padding-top: 1%;
+}
+
+.social-div{
+  width: 40%;
+}
+
+.fb{
+margin-left: 10%;
+}
+
+.ig{
+  margin-left: 10%;
+}
+
+.event-page{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info-block{
+  margin-top: 5%;
+}
+
+.update-block{
+  margin-top: 5%;
+width: 15%;
+margin-left: 20%;
+}
+
+.edit-btn{
+
+margin-left: 10%;
+  border: 1px solid black;
+padding: 3% 7% 3% 7%;
+background-color: slateblue;
+border-radius: 5px;
+}
+
+
+
+.delete-btn{
+  margin-left: 10%;
+  border: 1px solid black;
+padding: 3% 7% 3% 7%;
+background-color: slateblue;
+border-radius: 5px;
+}
+
+.main-section{
+  background-color: rgba(106,90,205,0.6);
+  width: 1360px;
+height: 1200px;
+margin-left: 5%;
+border: 1px solid black;
+border-radius: 2px;
+}
+
+.event-title{
+  margin-left: 22%;
+  margin-top: 2%;
+}
+
+
+.todo-styles{
+
+  background-color: rgba(106,90,205,0.6);
+  width: 90%;
+height: 500px;
+margin-left: 5%;
+border: 1px solid black;
+border-radius: 2px;
+}
