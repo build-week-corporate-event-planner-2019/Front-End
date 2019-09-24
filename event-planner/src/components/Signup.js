@@ -1,7 +1,7 @@
 import React from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-class Signup extends React.Component {
+class SignUp extends React.Component {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
   state = {
@@ -24,7 +24,7 @@ class Signup extends React.Component {
     });
   };
 
-  signup = e => {
+  signUp = e => {
     e.preventDefault();
     const { password, confirmPassword } = this.state;
     // perform all neccassary validations
@@ -50,7 +50,7 @@ class Signup extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.signup}>
+        <form onSubmit={this.signUp}>
           <input
             type="text"
             name="name"
@@ -88,4 +88,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default SignUp;
