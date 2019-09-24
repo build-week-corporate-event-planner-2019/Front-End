@@ -29,10 +29,43 @@
   width: 100%;
   background: slateblue;
   font-size: 25px;
+display: flex;
+}
+
+.nav-group {
+  color: slateblue;
+  display: flex;
+    justify-content: space-between;
+}
+
+.nav-brand{
+  margin-top: 1.5%;
+  margin-left: 5%;
 }
 
 .nav-brand {
-  color: slateblue;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-items{
+  display: flex;
+  margin-right: 2%;
+ width: 30%;
+}
+
+.nav-item{
+margin-right: 5%;
+
+}
+
+.NavbarBrand {
+  text-decoration: none;
+}
+
+li a{
+  text-decoration: none;
+  color: black;
 }
 
 .footer {

@@ -8,19 +8,19 @@ function Navigation() {
     return (
         <div className="navbar">
 
-            <Navbar className="nav-brand" light expand="md">
-                <NavbarBrand href="#">Event Planner App</NavbarBrand>
-                <Nav className="ml-auto" navbar>
-                    <NavItem>
+            <Navbar className="nav-group" light expand="md">
+                <NavbarBrand className="nav-brand" href="#">Event Planner App</NavbarBrand>
+                <Nav className="nav-items" navbar>
+                    <NavItem className="nav-item">
                         <NavLink href="#">Events</NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="nav-item">
                         <NavLink href="#">Sign-Up</NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="nav-item">
                         <NavLink href="#">Log-In</NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="nav-item">
                         <NavLink href="#">Log-Out</NavLink>
                     </NavItem>
                 </Nav>
