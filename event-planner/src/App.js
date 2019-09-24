@@ -11,7 +11,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Home from "./components/Home";
 import EventsHome from "./components/EventsHome";
 import Login from "./components/Login";
-import Signup from "./components/Signup";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
       <Switch>
         <PrivateRoute exact path="/events" component={EventsHome} />
         <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/signup" component={SignUp} />
       </Switch>
       <Home />
     </div>
