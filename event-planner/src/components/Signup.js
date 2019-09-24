@@ -1,6 +1,5 @@
 import React from "react";
-import { axiosWithAuth } from '../utils/axiosWithAuth';
-import { Link } from "react-router-dom";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 class Signup extends React.Component {
   // make a post request to retrieve a token from the api
@@ -30,12 +29,15 @@ class Signup extends React.Component {
     const { password, confirmPassword } = this.state;
     // perform all neccassary validations
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      alert("Passwords don't match");
     } else {
       // make API call
       //   axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
       axiosWithAuth()
-        .post(`/users/signup`, this.state.credentials)
+        .post(
+          `https://corporate-event-planner-be.herokuapp.com/api/users/signup`,
+          this.state.credentials
+        )
         .then(res => {
           localStorage.setItem("token", res.data.payload);
           // redirect to the apps main page?
@@ -79,12 +81,7 @@ class Signup extends React.Component {
             value={this.state.credentials.confirmpassword}
             onChange={this.handleChange}
           />
-          <Link to={`/protected`}>
-            <button>Sign Up!</button>
-          </Link>
-        {/* // <Link to={`/events/${this.state.user.id}`}>
-        //   <button>Update</button>
-        // </Link> */}
+          <button>Sign Up!</button>
         </form>
       </div>
     );
