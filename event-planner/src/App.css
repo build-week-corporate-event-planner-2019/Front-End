@@ -1,24 +1,8 @@
-/* .App {
-  text-align: center;
-} 
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 
-.App-logo {
-  height: 40vmin;
+body{
+font-family: 'Playfair Display', serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-.home-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.App-link {
-  color: #09d3ac;
-} */
 
 .App {
   text-align: center;
@@ -68,6 +52,15 @@ li a{
   color: black;
 }
 
+li a:hover{
+  text-decoration: none;
+  color: slateblue;
+  background: white;
+   transition: ease 0.6s;
+   border-radius: 5px;
+   
+}
+
 .footer {
   display: flex;
   justify-content: space-around;
@@ -82,11 +75,12 @@ li a{
 }
 
 .copyright {
-  padding-top: 1%;
+  padding-top: 0.4%;
 }
 
 .social-div {
-  width: 40%;
+  width: 50%;
+  margin-left: 7%;
 }
 
 .fb {
@@ -108,6 +102,7 @@ li a{
 
 .info-block {
   margin-top: 5%;
+  font-weight: bold;
 }
 
 .update-block {
@@ -122,6 +117,16 @@ li a{
   padding: 3% 7% 3% 7%;
   background-color: slateblue;
   border-radius: 5px;
+   text-decoration: none;
+   color: black;
+    font-weight: bold;
+}
+
+.edit-btn:hover{
+  background: white;
+  color: slateblue;
+  border: 1px solid slateblue;
+   transition: ease 0.6s;
 }
 
 .delete-btn {
@@ -130,6 +135,17 @@ li a{
   padding: 3% 7% 3% 7%;
   background-color: slateblue;
   border-radius: 5px;
+  text-decoration: none;
+  color: black;
+   font-weight: bold;
+}
+
+
+.delete-btn:hover{
+  background: white;
+  color: slateblue;
+  border: 1px solid slateblue;
+  transition: ease 0.6s;
 }
 
 .main-section {
@@ -153,4 +169,22 @@ li a{
   margin-left: 5%;
   border: 1px solid black;
   border-radius: 2px;
+}
+
+.event-card{
+  border: 2px solid slateblue;
+  color: black;
+  width: 25%;
+  box-shadow: 5px 10px 8px 5px #888888;
+}
+
+.event-btn{
+  background: slateblue;
+  color: white;
+  padding: 2% 5%;
+  border: black;
+}
+
+.follow-us{
+  margin-left: 10%;
 }

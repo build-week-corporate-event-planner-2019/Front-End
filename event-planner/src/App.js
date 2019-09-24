@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 // import PrivateRoute from './components/PrivateRoute';
+import Event from './components/Event';
 import Navigation from "./components/Navigation";
 import EventInfoBlock from "./components/EventInfoBlock";
 import EventMainSection from "./components/EventMainSection";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/signup" component={Signup} />
       </Switch>
       <Home />
+      <Event />
     </div>
   );
 }
