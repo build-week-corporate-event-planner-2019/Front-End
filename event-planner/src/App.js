@@ -11,7 +11,7 @@ import Home from "./components/Home";
 import EventsHome from "./components/EventsHome";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-
+//Generic change
 function App() {
   return (
     <div className="App">
