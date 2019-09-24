@@ -1,5 +1,6 @@
 import React from "react";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { Link } from "react-router-dom";
 
 class Signup extends React.Component {
   // make a post request to retrieve a token from the api

@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <PrivateRoute exact path="/protected" component={EventsHome} />
+        <PrivateRoute exact path="/events" component={EventsHome} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
       </Switch>
