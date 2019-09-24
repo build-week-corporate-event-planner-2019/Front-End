@@ -29,16 +29,16 @@
   width: 100%;
   background: slateblue;
   font-size: 25px;
-display: flex;
+  display: flex;
 }
 
 .nav-group {
   color: slateblue;
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
-.nav-brand{
+.nav-brand {
   margin-top: 1.5%;
   margin-left: 5%;
 }
@@ -48,27 +48,28 @@ display: flex;
   color: black;
 }
 
-.nav-items{
+.nav-items {
   display: flex;
   margin-right: 2%;
- width: 30%;
+  width: 30%;
 }
 
-.nav-item{
-margin-right: 5%;
-
+.nav-item {
+  margin-right: 5%;
 }
 
 .NavbarBrand {
   text-decoration: none;
 }
 
-li a{
+li a {
   text-decoration: none;
   color: black;
 }
 
 .footer {
+  position: absolute;
+  bottom: 0px;
   display: flex;
   justify-content: space-around;
   align-content: center;
