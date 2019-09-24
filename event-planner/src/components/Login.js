@@ -11,6 +11,17 @@ class Login extends React.Component {
     }
   };
 
+// IF USING HOOKS
+//   const [credentials, setCredentials] = useState({username: "", password: ""});
+
+//   handleChange = e => {
+//       setCredentials({
+//           ...credentials,
+//           [e.target.name]: e.target.value
+//       })
+//   }
+
+
   handleChange = e => {
     this.setState({
       credentials: {
