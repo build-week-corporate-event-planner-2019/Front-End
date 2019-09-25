@@ -1,12 +1,13 @@
 import React from "react";
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+// import { axiosWithAuth } from '../utils/axiosWithAuth';
+import axios from 'axios';
 
 class Login extends React.Component {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
   state = {
     credentials: {
-      username: "",
+      email: "",
       password: ""
     }
   };
@@ -34,12 +35,12 @@ class Login extends React.Component {
   login = e => {
     e.preventDefault();
     // axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
-    axiosWithAuth()
-      .post(`/users/login`, this.state.credentials)
+    axios
+      .post(`https://corporate-event-planner-be.herokuapp.com/api/users/login`, this.state.credentials)
       .then(res => {
-        localStorage.setItem("token", res.data.payload);
+        localStorage.setItem("token", res.data.token);
         // redirect to the apps main page?
-        this.props.history.push("/events");
+        this.props.history.push("/events-home");
       })
       .catch(err => console.log(err));
   };
@@ -48,11 +49,11 @@ class Login extends React.Component {
     return (
       <div>
         <form onSubmit={this.login}>
-          <label>Username: </label>
+          <label>Email: </label>
           <input
             type="text"
-            name="username"
-            value={this.state.credentials.username}
+            name="email"
+            value={this.state.credentials.email}
             onChange={this.handleChange}
           />
           <br />
