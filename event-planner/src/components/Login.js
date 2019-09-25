@@ -1,22 +1,49 @@
-import React, { Component } from 'react'
+import React, { Component, Link } from 'react'
 
-export class Login extends Component {
+class Login extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             email: null,
+             password: null,
+
+        }
+    }
+    
     render() {
         return (
             <div className="wrapper">
                 <div className="form-wrapper"></div>
-                <h1>Create Account</h1>
+                <h1>Sign In</h1>
                 <form onSubmit= {this.handleSubmit} noValidate>
-                    <div className="firstName">
-                        <label htmlFor="firstName">First Name</label>
+                    <div className="email">
+                        <label htmlFor="email">Email</label>
                         <input 
-                        type="text" 
+                        type="email" 
                         className="" 
-                        placeholder="First Name" 
-                        name="firstName" 
+                        placeholder="Email"  
+                        name="email" 
                         noValidate
-                        onChange={this.handleChange}/>
+                        onChange={this.handleChange}
+                        />
                     </div>
+
+                    <div className="password">
+                        <label htmlFor="password">Password</label>
+                        <input 
+                        type="password" 
+                        className="" 
+                        placeholder="Password"
+                        name="password" 
+                        noValidate
+                        onChange={this.handleChange}
+                        />
+                    </div>
+                    <div className="createAccount">
+                        <button type="submit">Login</button>
+                        <small>Don't Have an Account? <Link to= "/signup">Sign Up</Link></small>
+                    </div>     
                 </form>
                 
             </div>
@@ -24,7 +51,7 @@ export class Login extends Component {
     }
 }
 
-export default Login
+export default Login 
 
 
 // import React from "react";

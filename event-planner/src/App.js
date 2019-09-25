@@ -1,19 +1,23 @@
 import React from 'react';
 import './App.css';
 
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Login from "./components/Login";
+// import Register from "./components/Register";
+import './styles.css';
+import {Route, Link} from 'react-router-dom';
+
 // import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      {/* <Switch>
-        <PrivateRoute exact path="/protected" component={BubblePage} />
-        <Route path="/login" component={Login} />
-      </Switch> */}
+    {/* <Route exact path="/signup" component={Register} /> */}
       <Login />
+      {/* <Register /> */}
     </div>
+    </Router>
   );
 }
 
