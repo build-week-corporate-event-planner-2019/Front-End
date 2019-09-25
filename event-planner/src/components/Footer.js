@@ -15,7 +15,7 @@ function Footer() {
                 <Link to="#"><FontAwesomeIcon icon={faFacebook} className="fb" /></Link>
                 <Link to="#"><FontAwesomeIcon icon={faInstagram} className="ig" /></Link>
             </div>
-            <p className="copyright">Copyright 2019, LambdaTeam</p>
+            <p className="copyright">Copyright 2019, LambdaTeam.</p>
 
         </div>
     )
