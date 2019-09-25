@@ -1,24 +1,8 @@
-/* .App {
-  text-align: center;
-} 
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 
-.App-logo {
-  height: 40vmin;
+body{
+font-family: 'Playfair Display', serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-.home-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.App-link {
-  color: #09d3ac;
-} */
 
 .App {
   text-align: center;
@@ -67,6 +51,15 @@ li a {
   color: black;
 }
 
+li a:hover{
+  text-decoration: none;
+  color: slateblue;
+  background: white;
+   transition: ease 0.6s;
+   border-radius: 5px;
+   
+}
+
 .footer {
   position: absolute;
   bottom: 0px;
@@ -83,11 +76,13 @@ li a {
 }
 
 .copyright {
-  padding-top: 1%;
+  padding-top: 0.4%;
+  margin-right: 4%;
 }
 
 .social-div {
-  width: 40%;
+  width: 50%;
+  margin-left: 10%;
 }
 
 .fb {
@@ -109,6 +104,7 @@ li a {
 
 .info-block {
   margin-top: 5%;
+  font-weight: bold;
 }
 
 .update-block {
@@ -123,6 +119,16 @@ li a {
   padding: 3% 7% 3% 7%;
   background-color: slateblue;
   border-radius: 5px;
+   text-decoration: none;
+   color: black;
+    font-weight: bold;
+}
+
+.edit-btn:hover{
+  background: white;
+  color: slateblue;
+  border: 1px solid slateblue;
+   transition: ease 0.6s;
 }
 
 .delete-btn {
@@ -131,6 +137,17 @@ li a {
   padding: 3% 7% 3% 7%;
   background-color: slateblue;
   border-radius: 5px;
+  text-decoration: none;
+  color: black;
+   font-weight: bold;
+}
+
+
+.delete-btn:hover{
+  background: white;
+  color: slateblue;
+  border: 1px solid slateblue;
+  transition: ease 0.6s;
 }
 
 .main-section {
@@ -147,11 +164,88 @@ li a {
   margin-top: 2%;
 }
 
+
+
+.event-card{
+  border: 2px solid slateblue;
+  color: black;
+  width: 25%;
+  box-shadow: 5px 10px 8px 5px #888888;
+}
+
+.event-btn{
+  background: slateblue;
+  color: white;
+  padding: 2% 5%;
+  border: black;
+}
+
+.follow-us{
+  margin-left: 4%;
+}
+
+
+
+/********ToDos Styles**********/
+
 .todo-styles {
-  background-color: rgba(106, 90, 205, 0.6);
+  /* background-color: rgba(106, 90, 205, 0.6); */
+  background: slateblue;
   width: 90%;
-  height: 500px;
+  height: 800px;
   margin-left: 5%;
   border: 1px solid black;
   border-radius: 2px;
+}
+
+.todos-header{
+background: slateblue;
+color: white;
+width: 25%;
+padding: 2%;
+}
+
+.todo-list {
+    background-color: white;
+    margin: auto;
+    margin-top: 5%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #efefef;
+    box-shadow:
+    /* The top layer shadow */
+        0 1px 1px rgba(0,0,0,0.15),
+            /* The second layer */
+        0 10px 0 -5px #eee,
+            /* The second layer shadow */
+        0 10px 1px -4px rgba(0,0,0,0.15),
+            /* The third layer */
+        0 20px 0 -10px #eee,
+            /* The third layer shadow */
+        0 20px 1px -9px rgba(0,0,0,0.15);
+    padding: 30px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 20px 0;
+    width: 70%;
+    border-bottom: 1px solid slateblue;
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    color: #333333;
+}
+
+input[type=checkbox] {
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+input[type=checkbox]:focus {
+    outline: 0;
 }

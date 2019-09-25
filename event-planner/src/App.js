@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 // import PrivateRoute from './components/PrivateRoute';
+import Event from './components/Event';
 import Navigation from "./components/Navigation";
 
 import Footer from "./components/Footer";
