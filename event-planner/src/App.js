@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 // import PrivateRoute from './components/PrivateRoute';
 import Navigation from "./components/Navigation";
 
@@ -16,9 +16,10 @@ function App() {
     <div className="App">
       <Navigation />
       <Switch>
-        <PrivateRoute exact path="/events-home" component={EventsHome} />
-        <Route path="/login" component={Login} />
+        <Route exact path="/" component={Login} />
         <Route path="/register" component={SignUp} />
+        <PrivateRoute exact path="/events-home" component={EventsHome} />
+        <Redirect from="/" to="/events-home" />
       </Switch>
       <Footer />
     </div>

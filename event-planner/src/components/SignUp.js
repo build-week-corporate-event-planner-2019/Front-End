@@ -41,9 +41,10 @@ class Signup extends React.Component {
         .post(`/users/register`, this.state.credentials)
         .then(res => {
           console.log(res.data.token);
-          localStorage.setItem("token", res.data.payload);
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("user_id", res.data.user_id);
           // redirect to the apps main page?
-          this.props.history.push("/protected");
+          this.props.history.push("/events-home");
         })
         .catch(err => console.log(err));
     }
