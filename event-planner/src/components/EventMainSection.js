@@ -15,7 +15,7 @@ function EventMainSection() {
 
             <div className="actions">
                 <div className="actions__container">
-                    <input id="search-text" class="input" type="text" placeholder="Filter Todos" />
+                    <input id="search-text" className="input" type="text" placeholder="Filter Todos" />
                     <label className="checkbox">
                         <input id="hide-completed" type="checkbox" /> Hide Completed
             </label>
