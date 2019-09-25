@@ -15,8 +15,8 @@ import React, { Component, Link } from 'react'
 
         }
     }
-    handleSubmit = e => {
-        e.preventDefault();
+    // handleSubmit = e => {
+    //     // e.preventDefault();
     
     render() {
         return (
