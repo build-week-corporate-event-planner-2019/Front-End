@@ -1,15 +1,22 @@
 import React, { Component, Link } from 'react'
 
-class Login extends Component {
+ export class Login extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
              email: null,
              password: null,
+             formErrors:{
+                 email:"",
+                 password:"",
+
+             }
 
         }
     }
+    handleSubmit = e => {
+        e.preventDefault();
     
     render() {
         return (

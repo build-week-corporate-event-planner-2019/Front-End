@@ -1,11 +1,52 @@
 import React, { Component } from 'react'
 
+const formValid = formErrors => {
+    let valid = true;
+
+    Object.values(formErrors).forEach(val => {
+        val.length > 0 && (valid=false)
+    });
+return valid;
+}
+
 class Register extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             firstName: null,
+             lastName: null,
+             email: null,
+             password: null,
+             formErrors:{
+                 firstName:"",
+                 lastName:"",
+                 email:"",
+                 password:"",
+             }
+        }
+    }
+
+    handleSubmit = e => {
+        e.preventDefault();
+if (formValid(this.state.formErrors)){
+    console.log(`
+    --SUBMITTING--
+    First Name: ${this.state.firstName}
+    Last Name: ${this.state.lastName}
+    Email: ${this.state.email}
+    Password: ${this.state.password}
+    `)
+} else{
+    console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+}
+    };
+    
     render() {
         return (
             <div className="wrapper">
                 <div className="form-wrapper"></div>
-                <h1>Sign In</h1>
+                <h1>Sign Up</h1>
                 <form onSubmit= {this.handleSubmit} noValidate>
                     <div className="firstName">
                         <label htmlFor="firstName">First Name</label>
@@ -58,9 +99,12 @@ class Register extends Component {
                         onChange={this.handleChange}
                         />
                     </div>
+
+                    <div className="createAccount">
+                        <button type="submit">Create Account</button>
                    
 
-                      
+                      </div>
                 </form>
                 
             </div>
