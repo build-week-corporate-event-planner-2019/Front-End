@@ -10,9 +10,9 @@ class SignUp extends React.Component {
       email: "",
       company: "",
       role: "",
-      password: "",
-      confirmpassword: ""
-    }
+      password: ""
+    },
+    confirmpassword: ""
   };
 
   handleChange = e => {
@@ -24,7 +24,11 @@ class SignUp extends React.Component {
     });
   };
 
-  signUp = e => {
+  handleChangeConfirm = e => {
+    this.setState({ ...this.state, confirmpassword: e.target.value });
+  };
+
+  signup = e => {
     e.preventDefault();
     const { password, confirmPassword } = this.state;
     // perform all neccassary validations
@@ -34,14 +38,13 @@ class SignUp extends React.Component {
       // make API call
       //   axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
       axiosWithAuth()
-        .post(
-          `https://corporate-event-planner-be.herokuapp.com/api/users/signup`,
-          this.state.credentials
-        )
+        .post(`/users/register`, this.state.credentials)
         .then(res => {
-          localStorage.setItem("token", res.data.payload);
+          console.log(res.data.token);
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("user_id", res.data.user_id);
           // redirect to the apps main page?
-          this.props.history.push("/protected");
+          this.props.history.push("/events-home");
         })
         .catch(err => console.log(err));
     }
@@ -50,36 +53,49 @@ class SignUp extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.signUp}>
+        <form onSubmit={this.signup}>
+          Name
           <input
             type="text"
             name="name"
             value={this.state.credentials.name}
             onChange={this.handleChange}
           />
+          Email
           <input
             type="text"
             name="email"
             value={this.state.credentials.email}
             onChange={this.handleChange}
           />
+          Company
           <input
             type="text"
             name="company"
             value={this.state.credentials.company}
             onChange={this.handleChange}
+            required="must enter"
           />
+          Role
+          <input
+            type="text"
+            name="role"
+            value={this.state.credentials.role}
+            onChange={this.handleChange}
+          />
+          Password
           <input
             type="password"
             name="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
+          Confirm password
           <input
             type="password"
             name="confirmpassword"
-            value={this.state.credentials.confirmpassword}
-            onChange={this.handleChange}
+            value={this.state.confirmpassword}
+            onChange={this.handleChangeConfirm}
           />
           <button>Sign Up!</button>
         </form>

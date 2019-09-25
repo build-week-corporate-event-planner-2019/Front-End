@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { getEvents } from '../actions/actions';
+import { connect } from "react-redux";
 import Event from './Event';
 
-function EventsPage() {
 
+function EventsPage({ getEvents, events }) {
+    console.log(events);
+    
+    useEffect(() => {
+        getEvents();
+    }, [getEvents]);
 
     return (
         <div className="events-page">
@@ -14,7 +21,11 @@ function EventsPage() {
     )
 }
 
+const mapStateToProps= (state) => ({
+    events: state.events
+})
 
-
-
-export default EventsPage;
+export default connect(
+    mapStateToProps,
+    { getEvents }
+)(EventsPage);

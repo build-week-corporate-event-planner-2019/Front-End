@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+// import { Link } from 'react-router-dom';
+import { Card, Button, CardTitle, CardText } from 'reactstrap';
 
 function Event() {
 
@@ -8,11 +8,14 @@ function Event() {
     return (
 
         <div className="event">
-            <h4>Event Name</h4>
-            <p>Date</p>
-            <p>Location</p>
-            <p>Budget</p>
-            <Link to="#">View Event</Link>
+
+            <Card className="event-card">
+                <CardTitle>Event Name</CardTitle>
+                <CardText>Date:</CardText>
+                <CardText>Location:</CardText>
+                <CardText>Budget:</CardText>
+                <Button className="event-btn">View Event</Button>
+            </Card>
 
         </div>
     )
