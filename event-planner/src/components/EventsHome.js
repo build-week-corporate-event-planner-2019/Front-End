@@ -1,13 +1,15 @@
 import React from "react";
-import EventInfoBlock from "./EventInfoBlock";
+import EventCard from "./EventCard";
 import EventMainSection from "./EventMainSection";
+import EventsPage from './EventsPage';
 //import { Link } from 'react-router-dom';
 
 const EventsHome = () => {
   return (
     <div className="events-home-wrapper">
       <p>Events Page</p>
-      <EventInfoBlock />
+      <EventCard />
+      <EventsPage />
       <EventMainSection />
     </div>
   );
