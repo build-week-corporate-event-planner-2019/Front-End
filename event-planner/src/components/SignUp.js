@@ -1,7 +1,7 @@
 import React from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-class Signup extends React.Component {
+class SignUp extends React.Component {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
   state = {
@@ -26,7 +26,7 @@ class Signup extends React.Component {
 
   handleChangeConfirm = e => {
     this.setState({ ...this.state, confirmpassword: e.target.value });
-  }
+  };
 
   signup = e => {
     e.preventDefault();
@@ -122,4 +122,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default SignUp;
