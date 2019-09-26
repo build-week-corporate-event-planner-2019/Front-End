@@ -1,12 +1,13 @@
 import React from "react";
-// import { axiosWithAuth } from '../utils/axiosWithAuth';
-import axios from "axios";
+import { connect } from "react-redux";
+import { addEvent } from '../actions/actions';
 
 class AddEvent extends React.Component {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
   state = {
     eventinfo: {
+      user_id: 0, 
       name: "",
       description: "",
       start_date: "",
@@ -17,6 +18,7 @@ class AddEvent extends React.Component {
   };
 
   handleChange = e => {
+    e.preventDefault();
     this.setState({
       eventinfo: {
         ...this.state.eventinfo,
@@ -25,27 +27,35 @@ class AddEvent extends React.Component {
     });
   };
 
-  addevent = e => {
-    e.preventDefault();
-    // axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
-    axios
-      .post(
-        `https://corporate-event-planner-be.herokuapp.com/api/events`,
-        this.state.eventinfo
-      )
-      //   .then(res => {
-      //     localStorage.setItem("token", res.data.token);
-      //     localStorage.setItem("user_id", res.data.user_id);
-      //     // redirect to the apps main page?
-      //     this.props.history.push("/events-home");
-      //   })
-      .catch(err => console.log(err));
-  };
+  addEvent = e => {
+    //e.preventDefault();
+    this.props.addEvent(this.state.eventinfo);
+    this.setState({
+      eventinfo: {
+      name: "",
+      description: "",
+      start_date: "",
+      end_date: "",
+      location: "",
+      budget: ""
+      }
+    })
+    this.props.history.push('/events');
+  }
+
+  componentDidMount() {
+    this.setState({
+      ...this.state,
+      eventinfo: {
+        user_id: localStorage.getItem('user_id')
+      }
+    })
+  }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.addevent}>
+        <form onSubmit={this.addEvent}>
           <label>Event Name: </label>
           <input
             type="text"
@@ -93,11 +103,18 @@ class AddEvent extends React.Component {
             value={this.state.eventinfo.budget}
             onChange={this.handleChange}
           />
-          <button>Add Event</button>
         </form>
+        <button onClick={() => this.addEvent()} className="add-btn">Add Event</button>
       </div>
     );
   }
 }
 
-export default AddEvent;
+const mapStateToProps = (state) => ({
+  event: state.event
+})
+
+export default connect(
+  mapStateToProps,
+  { addEvent }
+)(AddEvent);
