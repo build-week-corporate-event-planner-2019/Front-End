@@ -6,11 +6,10 @@ import AddEvent from "./EventAdd.js";
 //import Event from "./Event";
 
 function EventsPage({ getEvents, events }) {
-  console.log("Here I am", events);
-
-  useEffect(() => {
-    getEvents();
-  }, [getEvents]);
+    
+    useEffect(() => {
+        getEvents();
+    }, [getEvents]);
 
   return (
     <div className="events-page">
