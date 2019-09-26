@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { getEventById } from '../actions/actions';
+import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 
 import Todos from './Todos';
 
-function Event() {
+function Event({ getEventById, event, match }) {
+    console.log("Here's the event", event);
+
+    useEffect(() => {
+        getEventById(match.params.id);
+    }, [getEventById]);
 
     return (
         <div className="event-page">
             <div className="event-title">
-                <h1>Event Name</h1>
+                <h1>{event.name}</h1>
             </div>
             <div className="event-card">
-                <p>Event Description</p>
-                <p>Date</p>
-                <p>Location</p>
-                <p>Budget</p>
+                <p>{`Event Description: ${event.description}`}</p>
+                <p>{`Start Date: ${event.start_date}`}</p>
+                <p>{`End Date: ${event.end_date}`}</p>
+                <p>{`Location: ${event.location}`}</p>
+                <p>{`Budget: ${event.budget}`}</p>
             </div>
 
             <div className="update-event">
@@ -28,4 +36,11 @@ function Event() {
 
 }
 
-export default Event;
+const mapStateToProps = (state) => ({
+    event: state.event
+})
+
+export default connect(
+    mapStateToProps,
+    { getEventById }
+)(Event);
