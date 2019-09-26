@@ -215,6 +215,7 @@ color: whitesmoke;
 padding: 1% 2%;
 font-size: 16px;
 cursor: pointer;
+border-color: black;
 }
 
 /*******Sign-up Page Styles******/
@@ -241,7 +242,7 @@ cursor: pointer;
   font-size: 16px;
   padding: 1% 1%;
   cursor: pointer;
-  border: black;
+  border-color: black;
 }
 
 span{
