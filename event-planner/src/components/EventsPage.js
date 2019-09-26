@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getEvents } from '../actions/actions';
 import { connect } from "react-redux";
+//import Event from "./Event";
 
 
 function EventsPage({ getEvents, events }) {
-    console.log(events);
+    console.log("Here I am", events);
     
     useEffect(() => {
         getEvents();
@@ -13,16 +15,30 @@ function EventsPage({ getEvents, events }) {
     return (
         <div className="events-page">
             <h1>Events</h1>
-            <h2>Upcoming Events</h2>
             <div className="events-list">
-                <div className="event">
-
-                </div>
+                {events.filter(event => {
+                    console.log(localStorage.getItem('user_id'));
+                    return event.user_id == localStorage.getItem('user_id')})
+                .map(event => {
+                    console.log('event:', event);
+                    return (
+                        <Link to={`/event/${event.id}`}>
+                            <h3>{event.name}</h3>
+                        </Link>);
+                })}
             </div>
         </div>
 
     )
 }
+
+// function EventDetails({ event }) {
+//     // return (
+//     //     <Link to={`/event/${event.id}`}>
+//     //         <Event event={event} />
+//     //     </Link>
+//     );
+// }
 
 const mapStateToProps= (state) => ({
     events: state.events
