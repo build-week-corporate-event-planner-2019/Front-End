@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 
 
 function EventsPage({ getEvents, events }) {
-    console.log("Here I am", events);
     
     useEffect(() => {
         getEvents();
@@ -17,10 +16,8 @@ function EventsPage({ getEvents, events }) {
             <h1>Events</h1>
             <div className="events-list">
                 {events.filter(event => {
-                    console.log(localStorage.getItem('user_id'));
                     return event.user_id == localStorage.getItem('user_id')})
                 .map(event => {
-                    console.log('event:', event);
                     return (
                         <Link to={`/event/${event.id}`}>
                             <h3>{event.name}</h3>
