@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 body{
-font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif;
 }
 
 .App {
@@ -12,7 +12,7 @@ font-family: 'Playfair Display', serif;
   text-align: center;
   width: 100%;
   background: slateblue;
-  font-size: 25px;
+  font-size: 20px;
   display: flex;
 }
 
@@ -23,7 +23,7 @@ font-family: 'Playfair Display', serif;
 }
 
 .nav-brand {
-  margin-top: 1.5%;
+  margin-top: 1.2%;
   margin-left: 5%;
 }
 
@@ -182,6 +182,72 @@ li a:hover{
 
 .follow-us{
   margin-left: 4%;
+}
+
+
+/*******Log-in Page Styles******/
+
+.login-page{
+
+  border: 4px solid slateblue;
+  width: 50%;
+  margin: 5% auto;
+  height: 400px;
+  box-shadow: 5px 10px 8px 5px slateblue;
+}
+
+
+.login-header{
+  margin-bottom: 10%;
+  background: slateblue;
+  padding: 5%;
+}
+
+
+
+.password-input{
+  margin-right: 4.3%;
+}
+
+.login-btn{
+background: slateblue;
+color: whitesmoke;
+padding: 1% 2%;
+font-size: 16px;
+cursor: pointer;
+border-color: black;
+}
+
+/*******Sign-up Page Styles******/
+
+.signup-page{
+
+  border: 4px solid slateblue;
+  width: 50%;
+  margin: 3% auto;
+  height: 450px;
+  box-shadow: 5px 10px 8px 5px slateblue;
+ 
+
+}
+
+.signup-form{
+  margin-top: 5%;
+}
+
+.signup-btn{
+  margin-top: 2%;
+  background: slateblue;
+  color: whitesmoke;
+  font-size: 16px;
+  padding: 1% 1%;
+  cursor: pointer;
+  border-color: black;
+}
+
+span{
+  border-bottom: 2px solid slateblue;
+
 }
 
 

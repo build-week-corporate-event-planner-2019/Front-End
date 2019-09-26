@@ -52,53 +52,71 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.signup}>
-          Name
-          <input
-            type="text"
-            name="name"
-            value={this.state.credentials.name}
-            onChange={this.handleChange}
-          />
-          Email
-          <input
-            type="text"
-            name="email"
-            value={this.state.credentials.email}
-            onChange={this.handleChange}
-          />
-          Company
-          <input
-            type="text"
-            name="company"
-            value={this.state.credentials.company}
-            onChange={this.handleChange}
-            required="must enter"
-          />
-          Role
-          <input
-            type="text"
-            name="role"
-            value={this.state.credentials.role}
-            onChange={this.handleChange}
-          />
-          Password
-          <input
-            type="password"
-            name="password"
-            value={this.state.credentials.password}
-            onChange={this.handleChange}
-          />
-          Confirm password
-          <input
-            type="password"
-            name="confirmpassword"
-            value={this.state.confirmpassword}
-            onChange={this.handleChangeConfirm}
-          />
-          <button>Sign Up!</button>
-        </form>
+
+      <div className="signup-page">
+
+        <h1 className="signup-header"><span>Sign-Up Form</span></h1>
+
+        <div className='signup-form'>
+          <form onSubmit={this.signup}>
+            Name
+            <br />
+            <input
+              type="text"
+              name="name"
+              value={this.state.credentials.name}
+              onChange={this.handleChange}
+            />
+            <br />
+            Email
+            <br />
+            <input
+              type="text"
+              name="email"
+              value={this.state.credentials.email}
+              onChange={this.handleChange}
+            />
+            <br />
+            Company
+            <br />
+            <input
+              type="text"
+              name="company"
+              value={this.state.credentials.company}
+              onChange={this.handleChange}
+              required="must enter"
+            />
+            <br />
+            Role
+            <br />
+            <input
+              type="text"
+              name="role"
+              value={this.state.credentials.role}
+              onChange={this.handleChange}
+            />
+            <br />
+            Password
+            <br />
+            <input
+              type="password"
+              name="password"
+              value={this.state.credentials.password}
+              onChange={this.handleChange}
+            />
+            <br />
+            Confirm password
+            <br />
+            <input
+              type="password"
+              name="confirmpassword"
+              value={this.state.confirmpassword}
+              onChange={this.handleChangeConfirm}
+            />
+            <br />
+            <button className="signup-btn">Sign Up!</button>
+          </form>
+        </div>
       </div>
     );
   }
