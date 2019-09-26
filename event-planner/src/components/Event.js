@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
-import { getEventById } from '../actions/actions';
-import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
+import { getEventById, deleteEvent } from '../actions/actions';
+import { connect } from "react-redux";
 
 import Todos from './Todos';
 
-function Event({ getEventById, event, match }) {
-    console.log("Here's the event", event);
+function Event({ getEventById, deleteEvent, event, match }) {
+    console.log("id:", match.params.id);
 
     useEffect(() => {
         getEventById(match.params.id);
     }, [getEventById]);
 
-    return (
+    return event.name ? (
         <div className="event-page">
             <div className="event-title">
                 <h1>{event.name}</h1>
@@ -26,12 +26,14 @@ function Event({ getEventById, event, match }) {
             </div>
 
             <div className="update-event">
-                <Link className="edit-btn" to="#">Edit</Link>
-                <Link className="delete-btn" to="#">Delete</Link>
+                <button className="edit-btn">Edit</button>
+                <button onClick={() => deleteEvent(match.params.id)} className="delete-btn">Delete</button>
             </div>
 
             <Todos />
         </div>
+    ) : (
+        <Link to="/events-home">Back to homepage</Link>
     )
 
 }
@@ -42,5 +44,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
     mapStateToProps,
-    { getEventById }
+    { getEventById, deleteEvent }
 )(Event);
