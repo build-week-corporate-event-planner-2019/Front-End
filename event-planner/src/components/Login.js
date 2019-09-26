@@ -12,15 +12,15 @@ class Login extends React.Component {
     }
   };
 
-// IF USING HOOKS
-//   const [credentials, setCredentials] = useState({username: "", password: ""});
+  // IF USING HOOKS
+  //   const [credentials, setCredentials] = useState({username: "", password: ""});
 
-//   handleChange = e => {
-//       setCredentials({
-//           ...credentials,
-//           [e.target.name]: e.target.value
-//       })
-//   }
+  //   handleChange = e => {
+  //       setCredentials({
+  //           ...credentials,
+  //           [e.target.name]: e.target.value
+  //       })
+  //   }
 
 
   handleChange = e => {
@@ -47,7 +47,9 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="login-page">
+        <h1 className="login-header">Welcome...Log-In!</h1>
+
         <form onSubmit={this.login}>
           <label>Email: </label>
           <input
@@ -57,15 +59,19 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-          <label>Password: </label>
-          <input
-            type="password"
-            name="password"
-            value={this.state.credentials.password}
-            onChange={this.handleChange}
-          />
-          <button>Log in</button>
+          <div className="password-input">
+            <label>Password: </label>
+            <input
+              type="password"
+              name="password"
+              value={this.state.credentials.password}
+              onChange={this.handleChange}
+            />
+          </div>
+          <br />
+          <button className="login-btn">Log in</button>
         </form>
+
       </div>
     );
   }
