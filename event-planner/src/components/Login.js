@@ -39,6 +39,7 @@ class Login extends React.Component {
       .post(`https://corporate-event-planner-be.herokuapp.com/api/users/login`, this.state.credentials)
       .then(res => {
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user_id", res.data.user_id);
         // redirect to the apps main page?
         this.props.history.push("/events-home");
       })
