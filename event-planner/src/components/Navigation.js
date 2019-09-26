@@ -13,13 +13,13 @@ function Navigation() {
             <NavLink href="/events">Events</NavLink>
           </NavItem>
           <NavItem className="nav-item">
-            <NavLink href="#">Sign-Up</NavLink>
+            <NavLink href="/register">Sign-Up</NavLink>
           </NavItem>
           <NavItem className="nav-item">
-            <NavLink href="#">Log-In</NavLink>
+            <NavLink href="/">Log-In</NavLink>
           </NavItem>
           <NavItem className="nav-item">
-            <NavLink href="#">Log-Out</NavLink>
+            <NavLink href="/">Log-Out</NavLink>
           </NavItem>
         </Nav>
       </Navbar>
