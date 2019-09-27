@@ -56,7 +56,7 @@ class AddEvent extends React.Component {
     console.log('this is props', this.props);
     return (
       <div className="event-home">
-        <form onSubmit={this.addEvent}>
+        <form className="add-event-form" onSubmit={this.addEvent}>
           <div className="event-name-field">
             <label>Event Name: </label>
             <input
