@@ -31,7 +31,7 @@ function Event({ getEventById, deleteEvent, updateEvent, event, match, id }) {
 
     return event.name ? (
         <div className="event-page">
-            <div className="event-title">
+            <div className="event-page-title">
                 <h1>{event.name}</h1>
             </div>
                 {!isUpdating && (
@@ -106,7 +106,7 @@ function Event({ getEventById, deleteEvent, updateEvent, event, match, id }) {
                 <button onClick={() => deleteEvent(match.params.id)} className="delete-btn">Delete</button>
             </div>
 
-            <Todos />
+            {/* <Todos /> */}
         </div>
     ) : (
         <Link to="/events-home">Back to homepage</Link>
