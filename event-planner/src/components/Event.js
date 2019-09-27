@@ -5,10 +5,10 @@ import { connect } from "react-redux";
 
 import Todos from './Todos';
 
-function Event({ getEventById, deleteEvent, updateEvent, event, match }) {
+function Event({ getEventById, deleteEvent, updateEvent, event, match, id }) {
     const [ isUpdating, setIsUpdating ] = useState(false);
     const [updatedEvent, setUpdatedEvent] = useState({
-        id: null,
+        user_id: localStorage.getItem('user_id'),
         name: "",
         description: "",
         start_date: "",
@@ -25,8 +25,9 @@ function Event({ getEventById, deleteEvent, updateEvent, event, match }) {
 
     const handleChange = e => {
         e.preventDefault();
-        setUpdatedEvent({ ...updatedEvent, [e.target.name]: [e.target.value] });
+        setUpdatedEvent({ ...updatedEvent, [e.target.name]: e.target.value });
     }
+    console.log("updatedEvent", updatedEvent);
 
     return event.name ? (
         <div className="event-page">
@@ -100,7 +101,7 @@ function Event({ getEventById, deleteEvent, updateEvent, event, match }) {
             
 
             <div className="update-event">
-                { isUpdating ? <button onClick={() => updateEvent(setIsUpdating(!isUpdating))} className="save-btn">Save</button>
+                {isUpdating ? <button onClick={() => setIsUpdating(!isUpdating, updateEvent(updatedEvent, match.params.id))} className="save-btn">Save</button>
                     : <button onClick={() => setIsUpdating(!isUpdating)} className="edit-btn">Update Event</button> }
                 <button onClick={() => deleteEvent(match.params.id)} className="delete-btn">Delete</button>
             </div>
