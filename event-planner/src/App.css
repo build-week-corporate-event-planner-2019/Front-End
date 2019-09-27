@@ -194,6 +194,7 @@ li a:hover{
   margin: 5% auto;
   height: 400px;
   box-shadow: 5px 10px 8px 5px slateblue;
+  border-radius: 5px;
 }
 
 
@@ -216,6 +217,8 @@ padding: 1% 2%;
 font-size: 16px;
 cursor: pointer;
 border-color: black;
+border-radius: 5px;
+margin-left: 5%;
 }
 
 /*******Sign-up Page Styles******/
@@ -227,7 +230,7 @@ border-color: black;
   margin: 3% auto;
   height: 460px;
   box-shadow: 5px 10px 8px 5px slateblue;
- 
+ border-radius: 5px;
 
 }
 
@@ -243,6 +246,7 @@ border-color: black;
   padding: 1% 1%;
   cursor: pointer;
   border-color: black;
+  border-radius: 5px;
 }
 
 span{
