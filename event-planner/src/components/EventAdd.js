@@ -53,6 +53,7 @@ class AddEvent extends React.Component {
   }
 
   render() {
+    console.log('this is props', this.props);
     return (
       <div>
         <form onSubmit={this.addEvent}>

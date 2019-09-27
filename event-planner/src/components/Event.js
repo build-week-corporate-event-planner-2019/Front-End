@@ -100,7 +100,7 @@ function Event({ getEventById, deleteEvent, updateEvent, event, match }) {
             
 
             <div className="update-event">
-                { isUpdating ? <button onClick={() => updateEvent(setIsUpdating(!isUpdating))} className="save-btn">Save</button>
+                { isUpdating ? <button onClick={() => setIsUpdating(!isUpdating, updateEvent)} className="save-btn">Save</button>
                     : <button onClick={() => setIsUpdating(!isUpdating)} className="edit-btn">Update Event</button> }
                 <button onClick={() => deleteEvent(match.params.id)} className="delete-btn">Delete</button>
             </div>

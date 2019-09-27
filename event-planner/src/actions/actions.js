@@ -60,11 +60,11 @@ export const UPDATE_EVENT = 'UPDATE_EVENT';
 export const UPDATE_EVENT_SUCCESS = 'UPDATE_EVENT_SUCCESS';
 export const UPDATE_EVENT_FAILURE = 'UPDATE_EVENT_FAILURE';
 
-export const updateEvent = event => dispatch => {
+export const updateEvent = (event, id) => dispatch => {
     dispatch({ type: UPDATE_EVENT });
 
     axiosWithAuth()
-        .put(`/events`, event)
+        .put(`/events/${id}`, event)
         .then(res => {
             dispatch({ type: UPDATE_EVENT_SUCCESS, payload: res.data });
         })

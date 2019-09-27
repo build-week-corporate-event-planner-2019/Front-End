@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import AddEvent from "./EventAdd.js";
 //import Event from "./Event";
 
-function EventsPage({ getEvents, events }) {
+function EventsPage({ getEvents, events, history }) {
     
     useEffect(() => {
         getEvents();
@@ -29,7 +29,7 @@ function EventsPage({ getEvents, events }) {
             );
           })}
       </div>
-      <AddEvent />
+      <AddEvent history={history} />
     </div>
   );
 }
