@@ -19,7 +19,9 @@ function Navigation() {
             <NavLink href="/">Log-In</NavLink>
           </NavItem>
           <NavItem className="nav-item">
-            <NavLink href="/">Log-Out</NavLink>
+            <NavLink href="https://pensive-mirzakhani-6d8023.netlify.com/index.html">
+              Log-Out
+            </NavLink>
           </NavItem>
         </Nav>
       </Navbar>
