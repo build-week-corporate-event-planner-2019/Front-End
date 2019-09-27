@@ -59,7 +59,7 @@ li a:hover{
 .footer {
   position: absolute;
   bottom: 0px;
-  margin-bottom: -180px;
+  margin-bottom: -200px;
   display: flex;
   justify-content: space-around;
   align-content: center;
@@ -252,7 +252,19 @@ span{
 
 
 /*******Event Home Page Styles*******/
+.events-page h1 {
+  background-color: #cfbce6;
+  margin: 0;
+  padding: 20px 0;
+}
 
+.events-list {
+  margin: 40px 0;
+}
+
+.events-list a {
+  text-decoration: none;
+}
 
 .event-home{
  border: 3px solid black;
@@ -262,7 +274,7 @@ span{
   margin: auto;
   margin-bottom: 100px;
   height: 400px;
-  background: slateblue;
+  background: #cfbce6;
   border-radius: 5px;
 }
 
@@ -289,7 +301,6 @@ margin-right: 5%;
 }
 
 .event-budget-field{
-
 margin-right: 3%;
 }
 
