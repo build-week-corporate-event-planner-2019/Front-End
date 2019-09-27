@@ -20,21 +20,20 @@ font-family: 'Poppins', sans-serif;
   color: slateblue;
   display: flex;
   justify-content: space-between;
+
 }
 
 .nav-brand {
   margin-top: 1.2%;
   margin-left: 5%;
-}
-
-.nav-brand {
   text-decoration: none;
   color: black;
 }
 
+
 .nav-items {
   display: flex;
-  margin-right: 2%;
+ 
   width: 30%;
 }
 
@@ -42,9 +41,6 @@ font-family: 'Poppins', sans-serif;
   margin-right: 5%;
 }
 
-.NavbarBrand {
-  text-decoration: none;
-}
 
 li a {
   text-decoration: none;
@@ -194,6 +190,7 @@ li a:hover{
   margin: 5% auto;
   height: 400px;
   box-shadow: 5px 10px 8px 5px slateblue;
+  border-radius: 5px;
 }
 
 
@@ -216,6 +213,8 @@ padding: 1% 2%;
 font-size: 16px;
 cursor: pointer;
 border-color: black;
+border-radius: 5px;
+margin-left: 5%;
 }
 
 /*******Sign-up Page Styles******/
@@ -227,7 +226,7 @@ border-color: black;
   margin: 3% auto;
   height: 460px;
   box-shadow: 5px 10px 8px 5px slateblue;
- 
+ border-radius: 5px;
 
 }
 
@@ -243,11 +242,73 @@ border-color: black;
   padding: 1% 1%;
   cursor: pointer;
   border-color: black;
+  border-radius: 5px;
 }
 
 span{
   border-bottom: 2px solid slateblue;
 
+}
+
+
+/*******Event Home Page Styles*******/
+
+
+.event-home{
+ border: 3px solid black;
+  color: black;
+  width: 30%;
+  box-shadow: 5px 10px 8px 5px #888888;
+margin: auto;
+height: 400px;
+background: slateblue;
+border-radius: 5px;
+}
+
+.event-name-field{
+margin-top: 10%;
+margin-right: 10%;
+}
+
+.event-description-field{
+margin-right: 19%;
+}
+
+.event-start-field{
+margin-right: 8%;
+}
+
+
+.event-end-field{
+margin-right: 6%;
+}
+
+.event-location-field{
+margin-right: 5%;
+}
+
+.event-budget-field{
+
+margin-right: 3%;
+}
+
+.add-btn{
+  background: whitesmoke;
+color: slateblue;
+padding: 1% 2%;
+font-size: 16px;
+cursor: pointer;
+border-color: black;
+font-weight: bold;
+margin-top: 4%;
+border-radius: 5px;
+margin-left: 10%;
+}
+
+.add-btn:hover{
+background: slateblue;
+color: whitesmoke;
+transition: ease 0.5s;
 }
 
 
