@@ -56,6 +56,24 @@ export const addEvent = event => dispatch => {
         })
 }
 
+export const UPDATE_EVENT = 'UPDATE_EVENT';
+export const UPDATE_EVENT_SUCCESS = 'UPDATE_EVENT_SUCCESS';
+export const UPDATE_EVENT_FAILURE = 'UPDATE_EVENT_FAILURE';
+
+export const updateEvent = event => dispatch => {
+    dispatch({ type: UPDATE_EVENT });
+
+    axiosWithAuth()
+        .put(`/events`, event)
+        .then(res => {
+            dispatch({ type: UPDATE_EVENT_SUCCESS, payload: res.data });
+        })
+        .catch(err => {
+            console.error(err);
+            dispatch({ type: UPDATE_EVENT_FAILURE, payload: err });
+        })
+}
+
 export const DELETE_EVENT = 'DELETE_EVENT';
 export const DELETE_EVENT_SUCCESS = 'DELETE_EVENT_SUCCESS';
 export const DELETE_EVENT_FAILURE = 'DELETE_EVENT_FAILURE';

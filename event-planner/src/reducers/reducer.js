@@ -2,6 +2,7 @@ import {
     GET_EVENTS, GET_EVENTS_SUCCESS, GET_EVENTS_FAILURE,
     GET_EVENTBYID, GET_EVENTBYID_SUCCESS, GET_EVENTBYID_FAILURE,
     ADD_EVENT, ADD_EVENT_SUCCESS, ADD_EVENT_FAILURE,
+    UPDATE_EVENT, UPDATE_EVENT_SUCCESS, UPDATE_EVENT_FAILURE,
     DELETE_EVENT, DELETE_EVENT_SUCCESS, DELETE_EVENT_FAILURE
 } from '../actions/actions';
 
@@ -62,6 +63,21 @@ export const reducer = (state = initialState, action) => {
                 event: action.payload
             }
         case ADD_EVENT_FAILURE:
+            return {
+                ...state,
+                error: action.payload
+            }
+            //update event
+        case UPDATE_EVENT:
+            return {
+                ...state
+            }
+        case UPDATE_EVENT_SUCCESS:
+            return {
+                ...state,
+                event: action.payload
+            }
+        case UPDATE_EVENT_FAILURE:
             return {
                 ...state,
                 error: action.payload

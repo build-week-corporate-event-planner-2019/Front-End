@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getEventById, deleteEvent } from '../actions/actions';
+import { getEventById, deleteEvent, updateEvent } from '../actions/actions';
 import { connect } from "react-redux";
 
 import Todos from './Todos';
 
-function Event({ getEventById, deleteEvent, event, match }) {
+function Event({ getEventById, deleteEvent, updateEvent, event, match }) {
     const [ isUpdating, setIsUpdating ] = useState(false);
+    const [updatedEvent, setUpdatedEvent] = useState({
+        id: null,
+        name: "",
+        description: "",
+        start_date: "",
+        end_date: "",
+        location: "",
+        budget: ""
+    });
     
     console.log("id:", match.params.id);
 
@@ -14,25 +23,10 @@ function Event({ getEventById, deleteEvent, event, match }) {
         getEventById(match.params.id);
     }, [getEventById]);
 
-    // const updateEvent = e => {
-    //     e.preventDefault();
-    //     // console.log(editedMovie, "<--- Edited Movie")
-    //     axiosWithAuth()
-    //         .put(`/events/${id}`, updatedEvent)
-    //         .then(res => {
-    //             setEvent({
-    //                 id: null,
-    //                 name: "",
-    //                 description: "",
-    //                 budget: 0,
-    //                 location: "",
-    //                 start_date: "",
-    //                 end_date: ""
-    //             });
-    //             props.history.push("/");
-    //         })
-    //         .catch(err => console.error(err.response));
-    // };
+    const handleChange = e => {
+        e.preventDefault();
+        setUpdatedEvent({ ...updatedEvent, [e.target.name]: [e.target.value] });
+    }
 
     return event.name ? (
         <div className="event-page">
@@ -50,22 +44,63 @@ function Event({ getEventById, deleteEvent, event, match }) {
                 )}
                 {isUpdating && (
                     <div className="event-card">
-                        <h2>Iam being updated</h2>
+                        <h2>{`${event.name} is being updated`}</h2>
+                        <form>
+                            <label>Event Name: </label>
+                            <input
+                                type="text"
+                                name="name"
+                                value={updatedEvent.name}
+                                onChange={handleChange}
+                            />
+                            <br />
+                            <label>Event Description: </label>
+                            <input
+                                type="text"
+                                name="description"
+                                value={updatedEvent.description}
+                                onChange={handleChange}
+                            />
+                            <br />
+                            <label>Event Start: </label>
+                            <input
+                                type="text"
+                                name="start_date"
+                                value={updatedEvent.start_date}
+                                onChange={handleChange}
+                            />
+                            <br />
+                            <label>Event End: </label>
+                            <input
+                                type="text"
+                                name="end_date"
+                                value={updatedEvent.end_date}
+                                onChange={handleChange}
+                            />
+                            <br />
+                            <label>Location: </label>
+                            <input
+                                type="text"
+                                name="location"
+                                value={updatedEvent.location}
+                                onChange={handleChange}
+                            />
+                            <br />
+                            <label>Budget: </label>
+                            <input
+                                type="text"
+                                name="budget"
+                                value={updatedEvent.budget}
+                                onChange={handleChange}
+                            />
+                        </form>
                     </div>
                 )}
-
-                
-                
-                <p>{`Event Description: ${event.description}`}</p>
-                <p>{`Start Date: ${event.start_date}`}</p>
-                <p>{`End Date: ${event.end_date}`}</p>
-                <p>{`Location: ${event.location}`}</p>
-                <p>{`Budget: ${event.budget}`}</p>
                 
             
 
             <div className="update-event">
-                { isUpdating ? <button onClick={() => setIsUpdating(!isUpdating)} className="save-btn">Save</button>
+                { isUpdating ? <button onClick={() => updateEvent(setIsUpdating(!isUpdating))} className="save-btn">Save</button>
                     : <button onClick={() => setIsUpdating(!isUpdating)} className="edit-btn">Update Event</button> }
                 <button onClick={() => deleteEvent(match.params.id)} className="delete-btn">Delete</button>
             </div>
@@ -84,5 +119,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
     mapStateToProps,
-    { getEventById, deleteEvent }
+    { getEventById, deleteEvent, updateEvent }
 )(Event);
