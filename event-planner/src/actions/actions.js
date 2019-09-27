@@ -61,7 +61,6 @@ export const UPDATE_EVENT_SUCCESS = 'UPDATE_EVENT_SUCCESS';
 export const UPDATE_EVENT_FAILURE = 'UPDATE_EVENT_FAILURE';
 
 export const updateEvent = (event, id) => dispatch => {
-    const id = match.params.id;
     dispatch({ type: UPDATE_EVENT });
 
     axiosWithAuth()
@@ -70,7 +69,7 @@ export const updateEvent = (event, id) => dispatch => {
             dispatch({ type: UPDATE_EVENT_SUCCESS, payload: res.data });
         })
         .catch(err => {
-            console.error(err);
+            console.error(err.response);
             dispatch({ type: UPDATE_EVENT_FAILURE, payload: err });
         })
 }
