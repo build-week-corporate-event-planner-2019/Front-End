@@ -20,21 +20,20 @@ font-family: 'Poppins', sans-serif;
   color: slateblue;
   display: flex;
   justify-content: space-between;
+
 }
 
 .nav-brand {
   margin-top: 1.2%;
   margin-left: 5%;
-}
-
-.nav-brand {
   text-decoration: none;
   color: black;
 }
 
+
 .nav-items {
   display: flex;
-  margin-right: 2%;
+ 
   width: 30%;
 }
 
@@ -42,9 +41,6 @@ font-family: 'Poppins', sans-serif;
   margin-right: 5%;
 }
 
-.NavbarBrand {
-  text-decoration: none;
-}
 
 li a {
   text-decoration: none;
