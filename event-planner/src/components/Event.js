@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 import Todos from './Todos';
 
-function Event({ getEventById, deleteEvent, updateEvent, event, match }) {
+function Event({ getEventById, deleteEvent, updateEvent, event, match, id }) {
     const [ isUpdating, setIsUpdating ] = useState(false);
     const [updatedEvent, setUpdatedEvent] = useState({
         id: null,
@@ -100,7 +100,7 @@ function Event({ getEventById, deleteEvent, updateEvent, event, match }) {
             
 
             <div className="update-event">
-                { isUpdating ? <button onClick={() => setIsUpdating(!isUpdating, updateEvent)} className="save-btn">Save</button>
+                { isUpdating ? <button onClick={() => setIsUpdating(!isUpdating, updateEvent(updatedEvent, id))} className="save-btn">Save</button>
                     : <button onClick={() => setIsUpdating(!isUpdating)} className="edit-btn">Update Event</button> }
                 <button onClick={() => deleteEvent(match.params.id)} className="delete-btn">Delete</button>
             </div>

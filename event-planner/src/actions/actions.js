@@ -61,6 +61,7 @@ export const UPDATE_EVENT_SUCCESS = 'UPDATE_EVENT_SUCCESS';
 export const UPDATE_EVENT_FAILURE = 'UPDATE_EVENT_FAILURE';
 
 export const updateEvent = (event, id) => dispatch => {
+    const id = match.params.id;
     dispatch({ type: UPDATE_EVENT });
 
     axiosWithAuth()
